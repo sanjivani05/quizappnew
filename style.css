@@ -1,0 +1,186 @@
+body{
+    margin:0;
+    font-family: sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.app{
+    max-width: 40 0px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.app .quiz-box{
+    background-color:goldenrod;
+    padding: 50px 15px;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+.app .quiz-box h4,
+.app .quiz-box h1{
+    font-size: 25px;
+    color:#ffffff;
+    margin: 10px 0px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.app .quiz-box h1{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-animation: question 1.5s ease alternate infinite;
+    animation: question 1.5s ease alternate infinite;
+}
+@-webkit-keyframes question{
+    0%{
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8)
+    }
+    100%{
+        --webkit-transform:scale(1)
+        transform: scale(1)
+    }
+}
+
+/*@keyframes question{
+    0%{
+        --webkit-transform:scale(0.8)
+        transform: scale(0.8)
+    }
+    100%{
+        --webkit-transform:scale(1)
+        transform: scale(1)
+    }
+
+}*/
+
+ .app .score-card{
+     background-color: burlywood;
+     flex-basis: 100%;
+     max-width: 100%;
+     padding: 5px 10px;
+     color:#ffffff;
+     font-size:18px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+    
+ }
+ .app .option-box{
+     background-color: #444444;
+     min-height: 500px;
+     flex-basis: 100%;
+     max-width: 100%;
+     display: flex;
+     padding: 15px;
+     flex-wrap: wrap;
+     padding: 0px;
+     border: 0;
+     justify-content: center;
+     align-content: flex-start;
+
+ }
+ .app.option-box img{
+     width: 100%;
+     display: block;
+
+ }
+ .app .option-box button{
+     flex-basis: calc(50% - 30px);
+     max-width: calc(50% - 30px) ;
+     margin: 15px;
+     border:0 ;
+     padding: 0;
+     border-radius: 4px;
+     overflow: hidden;
+     cursor: pointer;
+     animation: button 1s ease;
+
+ }
+ @keyframes button{
+   0%{transform: scale(0.5); opacity:0}
+   100%{transform: scale(1); opacity: 1}  
+ }
+ .app .option-box button{
+     position: relative;
+ }
+ .app .option-box button.Wrong span{
+position: absolute;
+left: 0%;
+background-color: red;
+bottom:0px;
+font-size: 16px;
+color: #ffffff;
+padding:5px ;
+width: 100%;
+z-index: 1;
+animation: alertWrong .1s ease;
+ }
+ @keyframes alertWrong{
+     0%{transform: translateY(-100%);}
+     50%{transform: translateY(-100%);}
+     100%{transform: translateY(0%);}
+    }
+ .app .option-box button.wrong img{
+     animation:imgWrong 1s ease;
+ }
+ @keyframes imgWrong{
+     0%,40%,70%{
+         transform: translateX(0px) scale(.8);
+     }
+     15%,55%{
+         transform: translateX(10px) scale(.8);
+     }
+     30%,70%{
+         transform: translateX(-10px) scale(.8);
+     }
+ }
+ .app .option-box button.Correct span{
+    position: absolute;
+    left: 0%;
+    background-color:green;
+    bottom:0px;
+    font-size: 16px;
+    color: #ffffff;
+    padding:5px ;
+    width: 100%;
+    z-index: 1;
+    animation: alertCorrect .1s ease;
+     }
+     @keyframes alertCorrect{
+        
+         0%{transform: translateY(-100%);}
+         100%{transform: translateY(0%);}
+        }
+        .app .option-box button.Correct img{
+            animation: imgCorrect 1s ease
+        }
+
+        .app .option-box button.hide{
+            animation: buttonHide 1s ease forwards;
+        }
+
+        @keyframes buttonHide{
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(0);
+            }
+        }
+        .app .option-box h1{
+            font-size: 50px;
+            color: #ffffff;
+            margin: 0px;
+            text-align: center;
+            animation: quizOver 1s ease;
+        }
+        @keyframes quizOver{
+            0%{transform: scale(.5); opacity:0}
+            100%{transform: scale(0); opacity:1}
+        }
